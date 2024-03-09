@@ -1,0 +1,30 @@
+#talk_to_us_btn{
+    transition: all .2s ease-in-out;
+    padding: 8px;
+}
+#login_btn{
+    padding: 8px;
+    transition: all .2s ease-in-out;
+}
+#get_started_btn{
+    padding: 8px;
+    background-color:#5961F1 ;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+#talk_to_us_btn:hover{
+    background-color:white ;
+    color: #106971;
+}
+#login_btn:hover{
+    background-color:#5961F1 ;
+    color: white;
+}
+#get_started_btn:hover{
+    transform: scale(0.95);
+}
+
+#navbar_first_items *{
+    cursor: pointer;
+}
+
