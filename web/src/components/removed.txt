@@ -1,0 +1,27 @@
+ <Box display='flex' justifyContent='center' alignItems='center' id="navbar_first_items" w='40%' >
+               <Menu w='100%'>
+                    <MenuButton as={Text}fontWeight={500}>Solutions</MenuButton>
+                    <MenuList id="menu_dropdown"  w='400px' backgroundColor='white' 
+                    display='flex' justifyContent='space-around' p={3}
+                    border='1px solid grey' borderRadius='3px' color='black' >
+                        <Text>LinkedIn Public Data API</Text>
+                        <Text>Email Solutions</Text>
+                        
+                    </MenuList>
+
+                </Menu> 
+
+                 <Menu w='100%'>
+                    <MenuButton as={Text}fontWeight={500}>Data APIs</MenuButton>
+                    <MenuList id="menu_dropdown"  w='400px' backgroundColor='white' p={3}
+                    border='1px solid grey' borderRadius='3px' color='black' >
+                        <Text>Company API</Text>
+                        <Text>People API</Text>
+                        <Text>Jobs API</Text>
+                        
+                    </MenuList>
+
+                </Menu>
+                
+                
+            </Box>

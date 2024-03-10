@@ -21,20 +21,25 @@ import {
 
 const ThirdSection=()=>{
     return(
-        <Box classname='thirdSection' p='50px'>
+        <Box classname='thirdSection' p='50px' backgroundColor='#e7f0f0' py='100px' position='relative'>
             
             <Box textAlign='center'>
-                <Text fontSize='2rem'>Access LinkedIn's Power with our API</Text>
-                <Box px='100px'>
-                    <Text fontSize='1rem'>Unlock LinkedIn's power with our cost-effective, high-volume API 
-                    solution, providing 100% fresh, real-time data to meet even the most demanding 
-                    requirements.
+                <Text fontSize='2rem' fontWeight='500'>Access LinkedIn's Power with our API</Text>
+                <Box px='250px'>
+                    <Text fontSize='1rem' fontWeight='500' textAlign='center'>
+                    Unlock LinkedIn's power with our cost-effective, high-volume API solution, 
+                    providing 100% fresh, real-time data to meet even the most demanding requirements.
                     </Text>
-                    <Button>Get Started Now</Button>
+                    <Link href='#'>
+                        <Button border='none' borderRadius='999px' cursor='pointer'
+                        backgroundColor='#0F6972' h='50px' w='150px' color='white'>Get Started Now</Button>
+
+                    </Link>
+                    
                 </Box>
                 
             </Box>
-            <Text>Trusted by so many companies</Text>
+            {/* <Text>Trusted by so many companies</Text> */}
         </Box>
     )
 }

@@ -1,0 +1,16 @@
+#box3{
+    width:50%;
+}
+#box4{
+    width:48%;
+}
+
+@media only screen and (max-width: 960px){
+    #box3{
+        width:100%;
+    }
+    #box4{
+        margin-top: 30px;
+        width:100%;
+    }
+}

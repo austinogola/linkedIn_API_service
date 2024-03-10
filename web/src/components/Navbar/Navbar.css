@@ -8,16 +8,18 @@
 }
 #get_started_btn{
     padding: 8px;
-    background-color:#5961F1 ;
-    color: white;
+    background-color:#F5A08C ;
+    color: white;;
     transition: all .2s ease-in-out;
+    border: none;
+    border-radius: 999px;
 }
 #talk_to_us_btn:hover{
     background-color:white ;
     color: #106971;
 }
 #login_btn:hover{
-    background-color:#5961F1 ;
+    background-color:#F59F86 ;
     color: white;
 }
 #get_started_btn:hover{
@@ -26,5 +28,25 @@
 
 #navbar_first_items *{
     cursor: pointer;
+}
+
+.box1,.box2{
+    display: flex;
+}
+.box3{
+    display: none;
+    position: relative;
+}
+
+@media only screen and (max-width: 960px){
+    .box1{
+        display: none;
+    }
+    .box2{
+        display: none;
+    }
+    .box3{
+        display: block;
+    }
 }
 
