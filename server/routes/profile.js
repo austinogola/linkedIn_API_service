@@ -36,21 +36,4 @@ router.get('/:profileId/posts',async(req,res)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports=router
