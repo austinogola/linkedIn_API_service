@@ -25,3 +25,9 @@
                 
                 
             </Box>
+
+
+            <Link display='flex' href="/" textDecoration='none' color='white' alignItems='center' border='1px solid red'>
+                {/* <Image src={img} boxSize='1rem'/> */}
+                <Text style={{fontFamily:'Allerta Stencil',fontSize:'1rem'}}>RevoSight</Text>
+            </Link>

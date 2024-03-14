@@ -1,8 +1,28 @@
+
+#firstSection{
+    padding: 50px;
+}
 #box3{
     width:50%;
 }
 #box4{
-    width:48%;
+    width:45%;
+}
+
+
+#featureBox{
+    padding: 10px;
+    width: 45%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+#featureBox>*{
+    border: 1px solid red;
+}
+
+#textBox3{
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 @media only screen and (max-width: 960px){
@@ -12,5 +32,33 @@
     #box4{
         margin-top: 30px;
         width:100%;
+    }
+}
+@media only screen and (max-width: 860px){
+    #featureBox{
+       
+        width: 100%;
+      }
+      #textBox3{
+        padding-left: 150px;
+        padding-right: 150px;
+      }
+}
+@media only screen and (max-width: 670px){
+    
+      #textBox3{
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+}
+
+@media only screen and (max-width: 600px){
+    
+    #featureBox{
+        display: grid;
+        grid-template-columns: none;
+    }
+    #firstSection{
+        padding: 10px;
     }
 }

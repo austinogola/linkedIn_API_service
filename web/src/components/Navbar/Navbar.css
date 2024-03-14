@@ -1,3 +1,7 @@
+#Navbar{
+    padding-left:50px ;
+    padding-right:50px ;
+}
 #talk_to_us_btn{
     transition: all .2s ease-in-out;
     padding: 8px;
@@ -35,8 +39,12 @@
 }
 .box3{
     display: none;
-    position: relative;
 }
+
+#menu_dropdown{
+    width: 500px;
+}
+
 
 @media only screen and (max-width: 960px){
     .box1{
@@ -49,4 +57,16 @@
         display: block;
     }
 }
+
+@media only screen and (max-width: 600px){
+    
+    
+    #Navbar{
+        padding-left:10px ;
+        padding-left:10px ;
+    }
+    #menu_dropdown{
+        width: 300px;
+    }
+    }
 

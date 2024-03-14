@@ -1,0 +1,16 @@
+#footerBox{
+    width: 23%;
+}
+
+@media only screen and (max-width: 696px){
+    #footerBox{
+        width: 48%;
+    }
+    
+}
+@media only screen and (max-width: 500px){
+    #footerBox{
+        width: 90%;
+    }
+    
+}

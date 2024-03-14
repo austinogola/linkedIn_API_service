@@ -23,48 +23,47 @@ import {
 const Footer=()=>{
     return(
         <Box classname='footer'  backgroundColor='#0F6972' p='50px'>
-            <Flex flexWrap='wrap'>
+            <Flex flexFlow='wrap' justifyContent='space-around'>
                 
-                <Flex w='25%' justifyContent='center'>
+                <Flex id='footerBox' justifyContent='center'>
                     <Box textAlign='left'>
-                        <Text fontWeight='500' fontSize='14px'>COMPANY</Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>About Us</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Our Pricing</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Contact Us</Link></Text>
+                        <Text fontWeight='600' fontSize='12px' color='#e5e1c4'>COMPANY</Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="/about" color='white' textDecoration='none'>About Us</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="/pricing" color='white' textDecoration='none'>Our Pricing</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="/contact" color='white' textDecoration='none'>Contact Us</Link></Text>
                     </Box>
                     
                 </Flex>
-                <Flex w='25%' justifyContent='center'>
+                <Flex id='footerBox' justifyContent='center'>
                     <Box textAlign='left'>
-                        <Text fontWeight='500' fontSize='14px'>ACCOUNT</Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>My Account</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>API Keys</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Recovery</Link></Text>
+                        <Text fontWeight='600' fontSize='12px' color='#e5e1c4'>ACCOUNT</Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='/login' textDecoration='none'>Login</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='/app' textDecoration='none'>Register</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>Account</Link></Text>
                     </Box>
                     
                 </Flex>
-                <Flex w='25%' justifyContent='center'>
+                <Flex id='footerBox' justifyContent='center'>
                     <Box textAlign='left'>
-                        <Text fontWeight='500' fontSize='14px'>RESOURCES</Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>API Documentation</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>FAQ</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Talk to Us</Link></Text>
+                        <Text fontWeight='600' fontSize='12px' color='#e5e1c4'>RESOURCES</Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>API Documentation</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>FAQ</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>Talk to Us</Link></Text>
                     </Box>
                     
                 </Flex>
 
-                <Flex w='25%' justifyContent='center'>
+                <Flex id='footerBox' justifyContent='center'>
                     <Box textAlign='left'>
-                        <Text fontWeight='500' fontSize='14px'>LEGAL</Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Privacy Policy</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Terms of Service</Link></Text>
-                        <Text fontSize='13px'><Link href="#" color='white' textDecoration='none'>Data Processing Addenum</Link></Text>
+                        <Text fontWeight='600' fontSize='12px' color='#e5e1c4'>LEGAL</Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>Privacy Policy</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>Terms of Service</Link></Text>
+                        <Text fontSize='12px' fontWeight='500'><Link href="#" color='white' textDecoration='none'>Data Processing Addenum</Link></Text>
                     </Box>
                 </Flex>
             </Flex>
             <Flex justifyContent='center' mt='50px' p='5px'>
                 <Flex borderTop='1px solid green' justifyContent='space-between' w='90%' alignItems='center'>
-                    <Logo/>
                     <Text fontSize='12px' color='white'>2023. All Rights Reserved</Text>
                 </Flex>
             </Flex>
