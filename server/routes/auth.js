@@ -7,11 +7,23 @@ const  {newToken} = require('../authHandlers/token')
 router.post('/login',async(req,res)=>{
     const {body}=req
     const {email,password}=body
-    if(!email){res.status(404).json({error:true,message:'Missing email'})}
-    if(password){res.status(404).json({error:true,message:'Missing password'})}
+    if(!email){return (res.status(404).json({error:true,message:'Missing email'}))}
+    if(!password){return (res.status(404).json({error:true,message:'Missing password'}))}
 
     if(await emailExists(email)){
-        return res.status(500).json({error:true,message:'Email already exists.Try logging in'})
+        const theUser=await User.findOne({email})
+        const pwdHash=theUser.password
+        if(await validatePwd(password,pwdHash)){
+            let webToken=await newToken(email,pwdHash)
+            res.status(200).json({
+                success:true,
+                message:'Login successful',
+                webToken
+            })
+
+        }else{
+            return res.status(500).json({error:true,message:'Invalid credentials'})
+        }
     }else{
         res.status(500).json({error:true,message:'User does not exist.Please signup to continue'})
     }

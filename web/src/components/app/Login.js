@@ -53,7 +53,9 @@ const Login=()=>{
                         .then(async res=>{
                             let response= await res.json()
                             if(res.status===200){
-                                console.log(response);
+                                const {webToken}=response
+                                document.cookie = `webToken=${webToken}; max-age=${3 * 60 * 60};`
+                                window.location.href = '/app';
                             }else{
                                 return setErrors({email:response.message,pwd:response.message})
                             }
@@ -74,11 +76,15 @@ const Login=()=>{
     return(
         <Flex justifyContent='center' alignItems='center'  h='100vh'  id='login' py='10px'
         backgroundColor='#e7f0f0'>
-            <Box minW='300px' w='40%' height='fit-content' 
-            borderRadius='5px' h='65%' backgroundColor='white'>
+            <Box minW='300px' w='40%' height='fit-content' py='50px'
+            borderRadius='5px'  backgroundColor='white'>
                 <Flex justifyContent='center' alignItems='center'>
                     <Logo colored={true} bg={true}/>
                 </Flex>
+                <Text textAlign='center' fontSize='12px' m='5px' fontWeight='400' marginBottom='10px' >
+                    Don't have an account? 
+                    <Link href="/app/register" textDecoration='none' color='#F7941D'> Sign Up</Link>
+                </Text>
                 <Flex variant='filled'justifyContent='center' alignItems='center' my='5px'>
                     <Input placeholder="Email" variant='filled' w='80%' h='30px' p='5px' id='email'
                     outline='none' border={errors.email?'1px solid #E53E3E':'2px solid #EDEFF2'} 

@@ -4,7 +4,7 @@ import colored_img from '../Images/lg-colored.png'
 const Logo=({colored,bg})=>{
     console.log(colored);
     return(
-        <Link display='flex' href="/" textDecoration='none' color='white' alignItems='center' >
+        <Link display='flex' href="/" textDecoration='none' color='white' h='50px' alignItems='center'>
             <Image src={colored===true?colored_img:img} boxSize='2rem'/>
                 
                 <Text style={{fontFamily:'Allerta Stencil',fontSize:bg===true?'2em':'1.5rem',
