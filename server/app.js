@@ -20,12 +20,14 @@ const connectDb=require('./config/db')
 const profileRoute = require('./routes/profile');
 const companyRoute = require('./routes/company');
 const authRoute = require('./routes/auth');
+const apiRoute = require('./routes/api');
 
 
 // Using routes
 app.use('/profile', profileRoute);
 app.use('/company', companyRoute);
 app.use('/auth', authRoute);
+app.use('/api', apiRoute);
 
 const PORT = process.env.PORT || 3005;
 

@@ -2,7 +2,7 @@ const router = require("express").Router()
 const {User,Account}=require('../models/Api')
 const {addNew,emailExists}=require('../modelHandlers/users')
 const  {validatePwd,encryptPwd} = require('../authHandlers/pwd')
-const  {newToken} = require('../authHandlers/token')
+const  {newWebToken,authenticateWebToken} = require('../authHandlers/token')
 
 router.post('/login',async(req,res)=>{
     const {body}=req
@@ -14,7 +14,7 @@ router.post('/login',async(req,res)=>{
         const theUser=await User.findOne({email})
         const pwdHash=theUser.password
         if(await validatePwd(password,pwdHash)){
-            let webToken=await newToken(email,pwdHash)
+            let webToken=await newWebToken(email,pwdHash)
             res.status(200).json({
                 success:true,
                 message:'Login successful',
@@ -43,7 +43,7 @@ router.post('/register',async(req,res)=>{
         let encrypted_pass=await encryptPwd(password)
         let makeNew=await addNew({email,password:encrypted_pass})
         if(makeNew.success){
-            let webToken=await newToken(email,password)
+            let webToken=await newWebToken(email,password)
             res.status(200).json({
                 success:true,
                 message:'New user added',

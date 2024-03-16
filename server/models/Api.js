@@ -23,7 +23,9 @@ const accountSchema = new Schema({
     apiUsage: [
         {
             date: { type: Date, default: Date.now }, // Date of API usage
-            creditsUsed: { type: Number, required: true } // Number of credits used for the API call
+            creditsUsed: { type: Number, required: true }, // Number of credits used for the API call
+            key:{ type: String, required: true, unique: true }
+            
         }
     ]
 });
@@ -33,8 +35,12 @@ const Account = mongoose.model('Account', accountSchema);
 
 // Define User schema
 const apiKeySchema = new Schema({
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    owner: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    name:{type:String},
     key: { type: String, required: true, unique: true },
+    created:{ type: String},
+    lastUsed:{type:String},
+    usage:[{type: String}]
 });
 const ApiKey = mongoose.model('ApiKey', apiKeySchema);
 
