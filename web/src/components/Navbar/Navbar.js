@@ -1,27 +1,7 @@
-import {
-    Box,
-    Text,
-    Flex,
-    UnorderedList,
-    Input,
-    Image,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    Link,
-    List,
-    MenuButton ,
-    Menu,
-    MenuList,
-    MenuItem
-  } from "@chakra-ui/react"
-
-  import './Navbar.css'
-  import { FiMenu } from "react-icons/fi";
-
-  import Logo from '../Logo/Logo'
- 
+import {Box,Text,Link,MenuButton ,Menu,MenuList,} from "@chakra-ui/react"
+import './Navbar.css'
+import { FiMenu } from "react-icons/fi";
+import Logo from '../Logo/Logo'
 
 const Navbar=()=>{
     return(

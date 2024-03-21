@@ -1,10 +1,9 @@
 const router = require("express").Router()
+const {triggerProfile}=require('../services/profileService')
 
 router.get('/:profileId',async(req,res)=>{
-    const queryParams=req.query
     const profileId = req.params.profileId;
-    console.log(queryParams);
-    console.log('-------');
+    triggerProfile(profileId)
     console.log(profileId);
     res.send('EVERITHIG OKAY')
     

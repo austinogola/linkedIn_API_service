@@ -2,9 +2,13 @@
     width: 23%;
 }
 
+a{
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 696px){
     #footerBox{
-        width: 48%;
+        width: 45%;
     }
     
 }

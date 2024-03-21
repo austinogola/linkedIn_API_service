@@ -1,27 +1,6 @@
 import './Home.css'
-import {
-    Box,
-    Flex,
-    Text,
-    Button,
-    UnorderedList,
-    Input,
-    Image,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    Link,
-    List,
-    Tabs ,
-    TabList,
-    Tab,
-    TabPanel,
-    TabPanels,
-    TabIndicator,
-    Stack,
-    Code
-  } from "@chakra-ui/react"
+import {Box,Flex,Text,Button,Link,Tabs ,TabList,Tab,TabPanel,TabPanels,Stack,Code
+} from "@chakra-ui/react"
   
 
 const FirstSection=()=>{
@@ -37,19 +16,19 @@ const FirstSection=()=>{
                 </Text>
 
                 <Flex justifyContent='center'>
-                    <Link href="#" cursor='pointer'>
-                        <Button mr='10px'  cursor='pointer' h='50px' w='150px' border='none' color='white'
+                    <Link href="/register" cursor='pointer'>
+                        <Button mr='10px'  cursor='pointer' h='40px' w='150px' border='none' color='white'
                             outline='none' backgroundColor='#F5A08C'
-                            borderRadius='999px' fontWeight={500} transition='all .2s ease-in-out'
-                             _hover={{backgroundColor:"#0F6972",color:'white' ,border:'2px solid #F5A08C'}}>
+                            borderRadius='999px' fontWeight={500} transition='all .1s'
+                             _hover={{transform:"scale(0.98)",color:'white' ,border:'2px solid #F5A08C'}}>
                         Get API Keys
                        </Button>
                     </Link>
-                    <Link href="#" cursor='pointer'>
-                        <Button ml='5px' h='50px' backgroundColor='#0F6972' w='150px' 
+                    {/* <Link href="#" cursor='pointer'>
+                        <Button ml='5px' h='40px' backgroundColor='#0F6972' w='150px' 
                         borderRadius='999px' border='2px solid #F5A08C' color='#F5A08C'
                         cursor='pointer' outline='none' >Try It For Free</Button>
-                    </Link>
+                    </Link> */}
                 </Flex>
             </Box>
             <Box  borderRadius='5px' h='400px' backgroundColor='white' id="box4" p='10px'>

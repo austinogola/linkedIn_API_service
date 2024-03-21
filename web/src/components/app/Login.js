@@ -2,20 +2,8 @@ import {
     Box,
     Flex,
     Text,
-    UnorderedList,
     Input,
-    Image,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
     Link,
-    ListItem,
-    List,
-    MenuButton ,
-    Menu,
-    MenuList,
-    MenuItem,
     Button
   } from "@chakra-ui/react"
   import Logo from "../Logo/Logo";

@@ -15,10 +15,12 @@
     width: 45%;
     display: grid;
     grid-template-columns: 30% 70%;
+    /* margin: 10px; */
 }
 #featureBox>*{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
+
 
 #textBox3{
     padding-left: 200px;
@@ -50,6 +52,9 @@
         padding-left: 80px;
         padding-right: 80px;
       }
+      #featureTextBox{
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 600px){

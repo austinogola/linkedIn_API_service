@@ -1,27 +1,11 @@
-import {
-    Box,
-    Flex,
-    Text,
-    Button,
-    UnorderedList,
-    Input,
-    Image,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
-    Link,
-    List,
-    MenuButton ,
-    Menu,
-    MenuList,
-    MenuItem
+import {Box, Text, Button, Link,
   } from "@chakra-ui/react"
+  
   import './Home.css'
 
 const ThirdSection=()=>{
     return(
-        <Box classname='thirdSection' py='50px'  backgroundColor='#e7f0f0'  position='relative'>
+        <Box classname='thirdSection' py='50px'  backgroundColor='#e7f0f0'  position='relative' minH='400px'>
             
             <Box textAlign='center'>
                 <Text fontSize='2rem' fontWeight='500'>Access LinkedIn's Power with our API</Text>
@@ -30,7 +14,7 @@ const ThirdSection=()=>{
                     Unlock LinkedIn's power with our cost-effective, high-volume API solution, 
                     providing 100% fresh, real-time data to meet even the most demanding requirements.
                     </Text>
-                    <Link href='/login'>
+                    <Link href='/app/register'>
                         <Button border='none' borderRadius='999px' cursor='pointer'
                         backgroundColor='#0F6972' h='50px' w='150px' color='white'>Get Started Now</Button>
 
