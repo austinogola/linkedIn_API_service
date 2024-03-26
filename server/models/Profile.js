@@ -1,83 +1,69 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-// Define the schema for the Profile model
-const mainScheme={
-    skills: {
-        type: [
-          {
-            name: {
-              type: String,
-            },
+const companySchema = new mongoose.Schema({
+  name: {type: String},
+  active: {type: Boolean},
+  logo: {type: String},
+  objectUrn: {type: String}
+});
 
-          },
-        ],
-        default: [],
-      },
-      positions: {
-        type: [
-          {
-            title: {
-              type: String,
-            },
-            // Add other properties for positions as needed
-          },
-        ],
-        default: [],
-      },
-  
-    positions: {
-      type: [String],
-      default: [],
-    },
-    education: {
-      type: [String],
-      default: [],
-    },
-    certifications: {
-        type: [String],
-        default: [],
-    },
-    volunteership: {
-        type: [String],
-        default: [],
-    },
-      education: {
-        type: [String],
-        default: [],
-      },
-  }
+
+const dateSchema = new mongoose.Schema({
+  start: {},
+  end: {} 
+});
+// Define the schema for the Profile mod
 const profileSchema = new mongoose.Schema({
-  // Define the properties of the profile
-  profileId:{
-    type: String,
-    required: true,
-  },
-  lastCalled:{
-    type: String,
-    required: true,
-  },
-  main:mainScheme ,
-  details: {
-    name: {
-      type: String,
-      required: true,
-    },
-    location: {
-      type: String,
-    },
-    // Add other properties as needed
-  },
+  profile_id:{type: String },
+  first_name:{type: String },
+  last_name:{type: String },
+  headline:{type: String },
+  summary:{type: String },
 
-  network: {
-    type: String,
-    required: true,
+  industry:{type: String },
+  influencer:{type: Boolean, },
+  premium:{type: Boolean, },
+  jobSeeker:{type: Boolean, },
+  contact_info:{
+    type: Object 
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
+  network_info: {
+    type: Object,
   },
-  // Add other properties as needed
+  location: {
+    type: Object,
+  },
+  skills: {
+    type: [String],
+    default: [] 
+  },
+  positions: {
+    type: [
+      {
+        company: {
+          type: Object
+        },
+        date: {
+          type: Object,
+        },
+        profile_positions:{
+          type:Array
+        }
+      }
+    ],
+    default: [] 
+  },
+  education:{
+    type:Array,
+    default: [] 
+  },
+  updates:{
+    type:Array,
+    default: [] 
+  },
+  last_called:{type: Number, default: new Date().getTime()}
+
 });
 
 // Create the Profile model based on the schema

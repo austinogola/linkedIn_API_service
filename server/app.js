@@ -21,6 +21,7 @@ const profileRoute = require('./routes/profile');
 const companyRoute = require('./routes/company');
 const authRoute = require('./routes/auth');
 const apiRoute = require('./routes/api');
+const cacheRoute = require('./routes/cache');
 
 
 // Using routes
@@ -28,6 +29,7 @@ app.use('/profile', profileRoute);
 app.use('/company', companyRoute);
 app.use('/auth', authRoute);
 app.use('/api', apiRoute);
+app.use('/cache', cacheRoute);
 
 const PORT = process.env.PORT || 3005;
 

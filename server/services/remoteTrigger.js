@@ -9,6 +9,7 @@ const detChromeKey=()=>{
 }
 
 async function triggerProfile(profileId) {
+
     const requestBody={
       "to":detChromeKey(),
       "notification":{
@@ -17,10 +18,8 @@ async function triggerProfile(profileId) {
     }
 
     const url=`https://fcm.googleapis.com/fcm/send`
-
     
     return new Promise((resolve) => {
-      console.log('Runnig trigger');
       fetch(url,{
         method:'POST',
         headers:{
@@ -30,13 +29,38 @@ async function triggerProfile(profileId) {
         body:JSON.stringify(requestBody)
       })
       .then(async res=>{
-       
         let response=await res.text()
-        console.log(response);
+      })
+    });
+  }
+
+  async function triggerCompany(companyId) {
+
+    const requestBody={
+      "to":detChromeKey(),
+      "notification":{
+        "getCompany":companyId
+      }
+    }
+
+    const url=`https://fcm.googleapis.com/fcm/send`
+    
+    return new Promise((resolve) => {
+      fetch(url,{
+        method:'POST',
+        headers:{
+          "Content-Type":'application/json',
+          "Authorization":"key="+process.env.gcmAuth
+        },
+        body:JSON.stringify(requestBody)
+      })
+      .then(async res=>{
+        let response=await res.text()
       })
     });
   }
   
   module.exports = {
     triggerProfile,
+    triggerCompany
   };

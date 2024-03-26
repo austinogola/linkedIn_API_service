@@ -43,20 +43,20 @@ const ProfileObjs = class {
             profile:profileId
             
         },
-        {
-            type:'positions',
-            url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/positionGroups`,
-            response:null,
-            profile:profileId
+        // {
+        //     type:'positions',
+        //     url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/positionGroups`,
+        //     response:null,
+        //     profile:profileId
 
-        },
-        {
-            type:'skills',
-            url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/skills`,
-            response:null,
-            profile:profileId
+        // },
+        // {
+        //     type:'skills',
+        //     url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/skills`,
+        //     response:null,
+        //     profile:profileId
 
-        },
+        // },
         {
             type:'network',
             url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/networkinfo`,
@@ -71,26 +71,19 @@ const ProfileObjs = class {
             profile:profileId
 
         },
-        {
-            type:'privacy',
-            url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/privacySettings`,
-            response:null,
-            profile:profileId
+        // {
+        //     type:'privacy',
+        //     url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/privacySettings`,
+        //     response:null,
+        //     profile:profileId
 
-        },
-        {
-            type:'badges',
-            url:`https://www.linkedin.com/voyager/api/identity/profiles/${profileId}/memberBadges`,
-            response:null,
-            profile:profileId
-
-        },
+        // },
         {
             type:'updates',
             url:`https://www.linkedin.com/voyager/api/feed/updates?`+new URLSearchParams({ "profileId": profileId,
             "q": "memberShareFeed",
             "moduleKey": "member-share",
-            "count": 100,
+            "count": 20,
             "start": 0}),
             response:null,
             profile:profileId

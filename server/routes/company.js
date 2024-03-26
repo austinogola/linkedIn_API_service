@@ -1,7 +1,21 @@
 const router = require("express").Router()
+const Company=require('../models/Company')
+const Profile=require('../models/Profile')
+const {triggerCompany}=require('../services/remoteTrigger')
 
 router.get('/:companyId',async(req,res)=>{
-    const queryParams=req.query
+    const companyId = req.params.companyId;
+    let full_profile=await Company.findOne({company_id:companyId},{ _id: 0 })
+    if(!full_profile){
+        triggerCompany(companyId)
+        while(!full_profile){
+            full_profile=await Company.findOne({company_id:companyId},{ _id: 0 })
+        }
+        res.status(200).json({company:full_profile})
+    }else{
+        res.status(200).json({company:full_profile})
+    }
+    
     
 })
 

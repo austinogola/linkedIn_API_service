@@ -1,11 +1,21 @@
 const router = require("express").Router()
-const {triggerProfile}=require('../services/profileService')
+const {triggerProfile}=require('../services/remoteTrigger')
+const Company=require('../models/Company')
+const Profile=require('../models/Profile')
 
 router.get('/:profileId',async(req,res)=>{
     const profileId = req.params.profileId;
-    triggerProfile(profileId)
-    console.log(profileId);
-    res.send('EVERITHIG OKAY')
+    let full_profile=await Profile.findOne({profile_id:profileId},{ _id: 0 })
+    if(!full_profile){
+        triggerProfile(profileId)
+        while(!full_profile){
+            full_profile=await Profile.findOne({profile_id:profileId},{ _id: 0 })
+        }
+        res.status(200).json({profile:full_profile})
+    }else{
+        res.status(200).json({profile:full_profile})
+    }
+    
     
 })
 

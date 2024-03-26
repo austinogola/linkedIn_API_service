@@ -61,11 +61,12 @@ const sleep=(ms)=>{
                     var mlr = new XMLHttpRequest();
                     mlr.onreadystatechange = function() {
                         if (mlr.readyState === XMLHttpRequest.DONE) {
+                            console.log(mlr);
                             if(mlr.status===200){
                                 let updatedObj={...unMade,response:mlr.responseText}
                                 let allMade=JSON.parse(st.getItem('allMade'))
                                 allMade.push(updatedObj)
-                                console.log(allMade);
+                                // console.log(allMade);
                                 st.setItem('allMade',JSON.stringify(allMade))
 
                                 
