@@ -27,15 +27,12 @@ import {
     FormLabel
   } from "@chakra-ui/react"
 
-  import Navbar from "../components/Navbar/Navbar";
-  import FirstSection from "../components/Home/FirstSection";
-  import SecondSection from "../components/Home/SecondSection";
-  import ThirdSection from "../components/Home/ThirdSection";
   import Footer from "../components/Footer/Footer";
   import Index from '../components/app/Index'
   import Playground from '../components/app/Playground'
   import KeysPart from '../components/app/Keys'
   import { useState,useEffect } from "react";
+  import '../components/app/app.css'
 
 const Keys=()=>{
     const [allApiKeys,setAllApiKeys]=useState([])
@@ -72,6 +69,9 @@ const Keys=()=>{
     getAllKeys()
         
     const epochToReadableDate = (epochTimestamp) => {
+        if(epochTimestamp==0){
+            return ('Never')
+        }
         const date = new Date(parseFloat(epochTimestamp));
         const year = date.getFullYear();
         const month = ('0' + (date.getMonth() + 1)).slice(-2); // Months are zero-based
@@ -113,9 +113,9 @@ const Keys=()=>{
     }
     return(
         <Box>
-            <Index selected='keys'
+            <Index selected='keys' title='API KEYS'
             mainPart={
-                <Box p='10px' >
+                <Box p='20px' >
                     <Text fontSize='14px'>Your secret API keys are listed below</Text>
                     <Text fontSize='14px'>Do not share your API key with others, or expose it in the browser or 
                     other client-side code</Text>
@@ -136,7 +136,7 @@ const Keys=()=>{
                                 <td>{apiKey.name}</td>
                                 <td>{apiKey.key}</td>
                                 <td>{epochToReadableDate(apiKey.created)}</td>
-                                <td>{apiKey.lastUsed}</td>
+                                <td>{epochToReadableDate(apiKey.lastUsed)}</td>
                             </tr>
                         ))}
                         </tbody>
@@ -174,8 +174,7 @@ const Keys=()=>{
             }>
 
             </Index>
-            <Index  
-            />
+            
         </Box>
     )
 }

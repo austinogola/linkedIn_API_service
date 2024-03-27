@@ -1,4 +1,5 @@
 const jwt=require('jsonwebtoken')
+const {User, ApiKey,Account}=require('../models/Api')
 
 const newWebToken=(email,password)=>{
     return new Promise((resolve, reject) => {
@@ -35,5 +36,24 @@ const authenticateWebToken = (req, res, next) => {
     });
 }
 
+const checkApiToken=async(req,res,next)=>{
+    const apiKey = req.headers['x-api-key'];
+    if(!apiKey){
+        return  res.status(401).json({ error:true, message:'Unauthorized' });
+    }
+    const KEY=await ApiKey.findOne({key:apiKey})
+    if(!KEY){
+        return  res.status(401).json({ error:true, message:'Invalid api key' });
+    }
+    let ownerAccount=await Account.findOne({user:KEY.owner})
+    if(ownerAccount.credits<=0){
+        return  res.status(401).json({ error:true, message:'You are out of credits' });
+    }
+    req.KEY=KEY
+    req.ownerAccount=ownerAccount
+    
+    next()
+}
 
-module.exports={newWebToken,authenticateWebToken}
+
+module.exports={newWebToken,authenticateWebToken,checkApiToken}

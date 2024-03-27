@@ -13,7 +13,7 @@ const addNewKey=(keyObj)=>{
             let newApiKey = uuidv4() + uuidv4()
             newApiKey=newApiKey.replaceAll('-',"")
             ApiKey.create({created:createdAt,owner:theUser._id,
-                name,key:newApiKey,lastUsed:'-'
+                name,key:newApiKey,lastUsed:0
             }).then(async apiKeyObj=>{
                 resolve({success:true,theNewKey:apiKeyObj})
                 

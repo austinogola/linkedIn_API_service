@@ -1,0 +1,36 @@
+table {
+    border-collapse: collapse;
+  }
+th,tr,td{
+    border:1px solid black;
+    border-bottom:1px solid black;
+    margin: 0px;
+    width:100px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+@media only screen and (max-width: 1030px){
+    #mainBox{
+        display: grid;
+        grid-template-columns:25% 75%;
+    }
+    
+}
+@media only screen and (max-width: 830px){
+    #mainBox{
+        display: grid;
+        grid-template-columns:30% 70%;
+    }
+    
+}
+@media only screen and (max-width: 690px){
+    #mainBox{
+        display: grid;
+        grid-template-columns:100%;
+    }
+    
+}

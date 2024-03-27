@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './pages/home';
+import Docs from './pages/docs';
 import Index from './pages/index';
 import Usage from './pages/usage';
 import Keys from './pages/keys';
@@ -13,6 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />}/>
+      <Route path="/docs" element={<Docs />}/>
       <Route path='app' element={<Index />}/>
           <Route path='app/login' element={<Login />} /> {/*A nested route!*/}
           <Route path='app/register' element={<Register />} /> {/*A nested route!*/}
